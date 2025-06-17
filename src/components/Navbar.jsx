@@ -22,69 +22,13 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6 font-medium text-blue-100 relative">
           {/* HOME Mega Menu */}
-          <div
-            className="relative group"
-            onMouseEnter={() => {
-              if (!homeMenuPinned) setHomeMegaMenuOpen(true);
-            }}
-            onMouseLeave={() => {
-              if (!homeMenuPinned) setHomeMegaMenuOpen(false);
-            }}
-          >
-            <button
-              className="flex items-center hover:text-white transition"
-              onClick={() => {
-                setHomeMegaMenuOpen((prev) => !prev);
-                setHomeMenuPinned((prev) => !prev);
-              }}
-            >
-              Home
-              <ChevronRight
-                className={`ml-1 transform transition ${
-                  homeMegaMenuOpen ? "rotate-90" : ""
-                }`}
-                size={16}
-              />
-            </button>
-
-            {homeMegaMenuOpen && (
-              <div className="absolute top-10 left-0 w-[500px] bg-white shadow-lg rounded-lg p-5 grid grid-cols-2 gap-4 z-40">
-                <div>
-                  <h4 className="font-bold text-gray-700">Intro & Banner</h4>
-                  <ul className="text-sm text-gray-600 space-y-1">
-                    <li>
-                      <a href="#home" className="hover:text-blue-500">
-                        Business Intro
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#home" className="hover:text-blue-500">
-                        Hero Banner
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-bold text-gray-700">Highlights</h4>
-                  <ul className="text-sm text-gray-600 space-y-1">
-                    <li>
-                      <a href="#home" className="hover:text-blue-500">
-                        Service Highlights
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#home" className="hover:text-blue-500">
-                        Service Area
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            )}
-          </div>
+          
+          <Link to="/" className="hover:text-blue-600 transition">
+            Home
+          </Link>
 
           <Link to="/about" className="hover:text-blue-600 transition">
-            About
+            About us
           </Link>
 
           {/* SERVICES Mega Menu */}
@@ -115,7 +59,7 @@ const Navbar = () => {
             </button>
 
             {servicesMegaMenuOpen && (
-              <div className="absolute top-10 left-0 w-[500px] bg-white shadow-lg rounded-lg p-5 grid grid-cols-2 gap-4 z-40">
+              <div className="absolute top-10 left-0 w-[450px] bg-white shadow-lg rounded-lg p-5 grid grid-cols-2 gap-4 z-40">
                 <div>
                   <h4 className="font-bold text-gray-700">Home Appliance</h4>
                   <ul className="text-sm text-gray-600 space-y-1">
@@ -134,21 +78,7 @@ const Navbar = () => {
                     </li>
                   </ul>
                 </div>
-                <div>
-                  <h4 className="font-bold text-gray-700">Kitchen Appliance</h4>
-                  <ul className="text-sm text-gray-600 space-y-1">
-                    <li>
-                      <a href="#oven" className="hover:text-blue-500">
-                        Oven Repairing
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#chimney" className="hover:text-blue-500">
-                        Chimney Repairing
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+               
               </div>
             )}
           </Link>

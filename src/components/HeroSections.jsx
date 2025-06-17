@@ -1,7 +1,7 @@
 import React from "react";
 import TypewriterText from "./TypewriterText";
 
-const HeroSection = () => {
+const HeroSections = () => {
   return (
     <section className="relative bg-white">
       <div className="grid lg:grid-cols-2 min-h-screen items-center">
@@ -17,7 +17,7 @@ const HeroSection = () => {
               and more — trusted and delivered at your doorstep.
             </p>
             <div className="flex justify-center lg:justify-start gap-4 flex-wrap">
-              <button className="bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 transition">
+              <button className="bg-[#271A70] text-white px-6 py-3 rounded-xl hover:bg-blue-700 transition">
                 Book a Service
               </button>
              
@@ -28,7 +28,7 @@ const HeroSection = () => {
         {/* Right Image Content */}
         <div className="relative hidden lg:block">
           <img
-            src="./public/hero_1.jpg"
+            src="./hero_1.jpg"
             alt="Repair Service Illustration"
             className="w-full h-full object-cover"
           />
@@ -55,4 +55,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default HeroSections;

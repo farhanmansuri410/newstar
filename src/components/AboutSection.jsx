@@ -23,26 +23,8 @@ const AboutSection = () => {
           <strong>100% customer satisfaction</strong>, and our reputation is
           built on trust, transparency, and top-quality work.
         </p>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 text-left mt-8 text-gray-800">
-          <div className="flex items-center">
-            ✅ <span className="ml-2">Trusted Technicians</span>
-          </div>
-          <div className="flex items-center">
-            ✅ <span className="ml-2">Instant Doorstep Repair</span>
-          </div>
-          <div className="flex items-center">
-            ✅ <span className="ml-2">Affordable Pricing</span>
-          </div>
-          <div className="flex items-center">
-            ✅ <span className="ml-2">Original Spare Parts</span>
-          </div>
-          <div className="flex items-center">
-            ✅ <span className="ml-2">24/7 Customer Support</span>
-          </div>
-          <div className="flex items-center">
-            ✅ <span className="ml-2">Satisfaction Guaranteed</span>
-          </div>
-        </div>
+        
+       
       </div>
     </section>
   );

@@ -22,7 +22,7 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6 font-medium text-blue-100 relative">
           {/* HOME Mega Menu */}
-          
+
           <Link to="/" className="hover:text-blue-600 transition">
             Home
           </Link>
@@ -78,7 +78,6 @@ const Navbar = () => {
                     </li>
                   </ul>
                 </div>
-               
               </div>
             )}
           </Link>
@@ -91,13 +90,13 @@ const Navbar = () => {
         {/* Contact Buttons */}
         <div className="hidden md:flex items-center space-x-4">
           <a
-            href="tel:9876543210"
+            href="tel:6367820171"
             className="bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition"
           >
             Call Now
           </a>
           <a
-            href="https://wa.me/918849390320"
+            href="https://wa.me/916367820171"
             target="_blank"
             rel="noopener noreferrer"
             className="text-green-600 font-semibold"
@@ -116,35 +115,13 @@ const Navbar = () => {
       {navOpen && (
         <div className="md:hidden bg-white px-4 pb-4 space-y-3">
           {/* Home Mobile Dropdown */}
-          <details className="group">
-            <summary className="flex justify-between items-center cursor-pointer hover:text-blue-600">
-              Home
-              <ChevronRight
-                className="transform group-open:rotate-90 transition duration-200"
-                size={16}
-              />
-            </summary>
-            <div className="pl-4 pt-2 space-y-2 text-sm text-gray-700">
-              <p className="font-semibold text-blue-500">Intro & Banner</p>
-              <a href="#home" className="block hover:text-blue-600">
-                Business Intro
-              </a>
-              <a href="#home" className="block hover:text-blue-600">
-                Hero Banner
-              </a>
 
-              <p className="pt-3 font-semibold text-blue-500">Highlights</p>
-              <a href="#home" className="block hover:text-blue-600">
-                Service Highlights
-              </a>
-              <a href="#home" className="block hover:text-blue-600">
-                Service Area
-              </a>
-            </div>
-          </details>
+          <a href="/" className="block hover:text-blue-600" onClick={closeNav}>
+            Home
+          </a>
 
           <a
-            href="#about"
+            href="/about"
             className="block hover:text-blue-600"
             onClick={closeNav}
           >
@@ -152,7 +129,7 @@ const Navbar = () => {
           </a>
 
           {/* Services Mobile Dropdown */}
-          <details className="group">
+          <a href="/services" className="group">
             <summary className="flex justify-between items-center cursor-pointer hover:text-blue-600">
               Services
               <ChevronRight
@@ -171,10 +148,10 @@ const Navbar = () => {
                 Washing Machine Repairing
               </a>
             </div>
-          </details>
+          </a>
 
           <a
-            href="#contact"
+            href="/contact"
             className="block hover:text-blue-600"
             onClick={closeNav}
           >
@@ -187,7 +164,7 @@ const Navbar = () => {
             📞 Call Now
           </a>
           <a
-            href="https://wa.me/918849390320"
+            href="https://wa.me/916367820171"
             className="block text-green-600 font-semibold"
           >
             💬 WhatsApp

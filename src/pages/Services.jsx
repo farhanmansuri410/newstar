@@ -1,13 +1,14 @@
 import React from "react";
 import RepairServices from "../components/RepairServices";
 import OtherServices from "../components/OtherServices";
+import ServiceArea from "../components/ServiceArea";
 
 const Services = () => {
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold">Services Page</h1>
       <RepairServices/>
       <OtherServices/>
+      <ServiceArea/>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
@@ -21,68 +22,35 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6 font-medium text-blue-100 relative">
-          {/* HOME Mega Menu */}
-
-          <Link to="/" className="hover:text-blue-600 transition">
+          <Link
+            to="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="hover:text-blue-600 transition"
+          >
             Home
           </Link>
 
-          <Link to="/about" className="hover:text-blue-600 transition">
+          <Link
+            to="/about"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="hover:text-blue-600 transition"
+          >
             About us
           </Link>
 
-          {/* SERVICES Mega Menu */}
           <Link
             to="/services"
-            className="relative group"
-            onMouseEnter={() => {
-              if (!servicesMenuPinned) setServicesMegaMenuOpen(true);
-            }}
-            onMouseLeave={() => {
-              if (!servicesMenuPinned) setServicesMegaMenuOpen(false);
-            }}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="hover:text-blue-600 transition"
           >
-            <button
-              className="flex items-center hover:text-blue-600 transition"
-              onClick={() => {
-                setServicesMegaMenuOpen((prev) => !prev);
-                setServicesMenuPinned((prev) => !prev);
-              }}
-            >
-              Services
-              <ChevronRight
-                className={`ml-1 transform transition ${
-                  servicesMegaMenuOpen ? "rotate-90" : ""
-                }`}
-                size={16}
-              />
-            </button>
-
-            {servicesMegaMenuOpen && (
-              <div className="absolute top-10 left-0 w-[450px] bg-white shadow-lg rounded-lg p-5 grid grid-cols-2 gap-4 z-40">
-                <div>
-                  <h4 className="font-bold text-gray-700">Home Appliance</h4>
-                  <ul className="text-sm text-gray-600 space-y-1">
-                    <li>
-                      <a href="#refrigerator" className="hover:text-blue-500">
-                        Refrigerator Repairing
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#washing-machine"
-                        className="hover:text-blue-500"
-                      >
-                        Washing Machine Repairing
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            )}
+            Services
           </Link>
 
-          <Link to="/contact" className="hover:text-blue-600 transition">
+          <Link
+            to="/contact"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="hover:text-blue-600 transition"
+          >
             Contact Us
           </Link>
         </div>
@@ -113,62 +81,83 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {navOpen && (
-        <div className="md:hidden bg-white px-4 pb-4 space-y-3">
-          {/* Home Mobile Dropdown */}
+        <div className="md:hidden p-4 bg-white">
+          <AnimatePresence>
+            {navOpen && (
+              <motion.div
+                key="menu"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4 }}
+                className="mt-4 space-y-4"
+              >
+                <motion.a
+                  href="/"
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                    closeNav();
+                  }}
+                  whileHover={{ scale: 1.05 }}
+                  className="block text-gray-800 hover:text-blue-600"
+                >
+                  Home
+                </motion.a>
 
-          <a href="/" className="block hover:text-blue-600" onClick={closeNav}>
-            Home
-          </a>
+                <motion.a
+                  href="/about"
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                    closeNav();
+                  }}
+                  whileHover={{ scale: 1.05 }}
+                  className="block text-gray-800 hover:text-blue-600"
+                >
+                  About
+                </motion.a>
 
-          <a
-            href="/about"
-            className="block hover:text-blue-600"
-            onClick={closeNav}
-          >
-            About
-          </a>
+                <motion.a
+                  href="/services"
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                    closeNav();
+                  }}
+                  whileHover={{ scale: 1.05 }}
+                  className="block text-gray-800 hover:text-blue-600"
+                >
+                  Services
+                </motion.a>
 
-          {/* Services Mobile Dropdown */}
-          <a href="/services" className="group">
-            <summary className="flex justify-between items-center cursor-pointer hover:text-blue-600">
-              Services
-              <ChevronRight
-                className="transform group-open:rotate-90 transition duration-200"
-                size={16}
-              />
-            </summary>
-            <div className="pl-4 pt-2 space-y-2 text-sm text-gray-700">
-              <a href="#refrigerator" className="block hover:text-blue-600">
-                Refrigerator Repairing
-              </a>
-              <a href="#oven" className="block hover:text-blue-600">
-                Oven Repairing
-              </a>
-              <a href="#washing-machine" className="block hover:text-blue-600">
-                Washing Machine Repairing
-              </a>
-            </div>
-          </a>
+                <motion.a
+                  href="/contact"
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                    closeNav();
+                  }}
+                  whileHover={{ scale: 1.05 }}
+                  className="block text-gray-800 hover:text-blue-600"
+                >
+                  Contact
+                </motion.a>
 
-          <a
-            href="/contact"
-            className="block hover:text-blue-600"
-            onClick={closeNav}
-          >
-            Contact
-          </a>
-          <a
-            href="tel:9876543210"
-            className="block text-blue-600 font-semibold"
-          >
-            📞 Call Now
-          </a>
-          <a
-            href="https://wa.me/916367820171"
-            className="block text-green-600 font-semibold"
-          >
-            💬 WhatsApp
-          </a>
+                <motion.a
+                  href="tel:9876543210"
+                  whileHover={{ scale: 1.05 }}
+                  className="block text-blue-600 font-semibold"
+                >
+                  📞 Call Now
+                </motion.a>
+
+                <motion.a
+                  href="https://wa.me/916367820171"
+                  whileHover={{ scale: 1.05 }}
+                  className="block text-green-600 font-semibold"
+                >
+                  💬 WhatsApp
+                </motion.a>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       )}
     </header>

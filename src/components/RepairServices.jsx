@@ -21,7 +21,7 @@ const services = [
   },
 ];
 
-const whatsappNumber = "918849390320"; // Client's number without +
+const whatsappNumber = "916367820171"; // Client's number without +
 
 const RepairServices = () => {
   return (

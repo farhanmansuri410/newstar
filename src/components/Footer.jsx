@@ -18,7 +18,7 @@ const Footer = () => {
             className="w-32 h-auto mb-4"
           />
           <p className="text-sm text-gray-400 leading-relaxed">
-            New Star Service Center is your trusted expert for home appliance
+            New Star Service Centre is your trusted expert for home appliance
             repair. We provide 24/7 customer support and reliable services.
           </p>
         </div>
